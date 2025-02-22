@@ -1,46 +1,123 @@
----
-layout: page
-description: "「离开世界之前 一切都是过程」"
----
-
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {% if post.lang == 'en' %}
-                {{ post.content | strip_html | truncate:300 }}
-            {% else %}
-                {{ post.content | strip_html | truncate:200 }}
-            {% endif %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工大学习资料库</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">工大资料库</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#gaoshu">高等数学</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#xiandai">线性代数</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#biancheng">编程</a></li>
+                </ul>
+            </div>
         </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
+    </nav>
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+    <!-- 首页内容 -->
+    <div class="container mt-4">
+        <h1>欢迎访问工大学习资料库！</h1>
+        <p>选择学科开始学习</p>
+    </div>
+
+    <!-- 高等数学 -->
+    <div id="gaoshu" class="container mt-4">
+        <h2>高等数学</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>课件下载</h4>
+                <ul>
+                    <li><a href="assets/gaoshu_chapter1.pdf" download>第一章课件</a></li>
+                    <li><a href="assets/gaoshu_chapter2.pptx" download>第二章课件</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>讲解视频</h4>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.bilibili.com/your-video-id"></iframe>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>往年试题</h4>
+                <ul>
+                    <li><a href="assets/gaoshu_2021.pdf" download>2021年期末试题</a></li>
+                    <li><a href="assets/gaoshu_2022.pdf" download>2022年期末试题</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 线性代数 -->
+    <div id="xiandai" class="container mt-4">
+        <h2>线性代数</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>课件下载</h4>
+                <ul>
+                    <li><a href="assets/xiandai_chapter1.pdf" download>第一章课件</a></li>
+                    <li><a href="assets/xiandai_chapter2.pptx" download>第二章课件</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>讲解视频</h4>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.bilibili.com/your-video-id"></iframe>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>往年试题</h4>
+                <ul>
+                    <li><a href="assets/xiandai_2021.pdf" download>2021年期末试题</a></li>
+                    <li><a href="assets/xiandai_2022.pdf" download>2022年期末试题</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编程 -->
+    <div id="biancheng" class="container mt-4">
+        <h2>编程</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>课件下载</h4>
+                <ul>
+                    <li><a href="assets/biancheng_chapter1.pdf" download>第一章课件</a></li>
+                    <li><a href="assets/biancheng_chapter2.pptx" download>第二章课件</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>讲解视频</h4>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.bilibili.com/your-video-id"></iframe>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>往年试题</h4>
+                <ul>
+                    <li><a href="assets/biancheng_2021.pdf" download>2021年期末试题</a></li>
+                    <li><a href="assets/biancheng_2022.pdf" download>2022年期末试题</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2023 工大学习资料库</p>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
