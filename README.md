@@ -1,6 +1,6 @@
 [Hux Blog](https://huangxuan.me)
 ================================
-
+https://fjsskj4.github.io/HIT-learning-materials.github.io/  this is the site of it
 > I never expected this to become popular.
 
 ![](http://huangxuan.me/img/blog-desktop.jpg)
